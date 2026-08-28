@@ -339,7 +339,7 @@ py ncas.py
 ## 📁 Estrutura do repositório
 
 ```text
-fase5/
+aurora-siger-ncas/
 ├── ncas.py
 ├── README.md
 ├── test_ncas.py
