@@ -1,0 +1,26 @@
+[
+    {
+        "id": "PROTOCOLO-LSS",
+        "titulo": "Falha no suporte de vida",
+        "palavras_chave": ["lss", "suporte", "vida", "atmosfera", "agua", "p1"],
+        "orientacao": "Preservar o suporte de vida, isolar o módulo afetado e acionar a equipe de contingência imediatamente."
+    },
+    {
+        "id": "PROTOCOLO-PWR",
+        "titulo": "Falha no complexo de energia",
+        "palavras_chave": ["pwr", "energia", "eletrica", "energia", "p1"],
+        "orientacao": "Ativar a fonte alternativa, priorizar módulos P1 e monitorar o consumo durante a recuperação."
+    },
+    {
+        "id": "PROTOCOLO-COM",
+        "titulo": "Falha de comunicação",
+        "palavras_chave": ["com", "comunicacao", "rede", "enlace"],
+        "orientacao": "Usar o canal redundante, verificar os enlaces e registrar a perda de comunicação para auditoria."
+    },
+    {
+        "id": "PROTOCOLO-GERAL",
+        "titulo": "Falha operacional geral",
+        "palavras_chave": ["falha", "modulo", "operacional", "manutencao"],
+        "orientacao": "Isolar o componente, avaliar o impacto nas dependências e encaminhar a manutenção responsável."
+    }
+]

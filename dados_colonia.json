@@ -1,0 +1,31 @@
+{
+    "sistema": "Nucleo Cognitivo da Aurora Siger (NCAS)",
+    "atualizado_em": "2026-08-27T22:55:42.809533-03:00",
+    "total_registros": 1,
+    "registros": [
+        {
+            "id_registro": 1,
+            "data_hora": "2026-08-27T22:55:42-03:00",
+            "categoria": "Diagnostico de infraestrutura",
+            "descricao": "LSS: OPERACIONAL",
+            "falha": true,
+            "critico": true,
+            "modulo_id": "LSS",
+            "impacto": [
+                "AGR",
+                "HAB",
+                "LSS",
+                "MED"
+            ],
+            "recomendacao": "[RECOMENDAÇÃO CONTEXTUAL]\nMódulo: LSS - Sistema de Suporte de Vida\nPrioridade: P1 (crítico) | Status: OPERACIONAL\nImpacto previsto: AGR, HAB, LSS, MED\nContexto recuperado: - Falha no suporte de vida: Preservar o suporte de vida, isolar o módulo afetado e acionar a equipe de contingência imediatamente.\n- Falha no complexo de energia: Ativar a fonte alternativa, priorizar módulos P1 e monitorar o consumo durante a recuperação.\n- Falha operacional geral: Isolar o componente, avaliar o impacto nas dependências e encaminhar a manutenção responsável.\nResiliência: CRITICO\nAção simulada: ativar o protocolo de contingência e preservar o suporte de vida.",
+            "revisao_humana": "PENDENTE"
+        }
+    ],
+    "infraestrutura_ncas": {
+        "total_modulos": 10,
+        "modulos_ativos": 10,
+        "modulos_criticos": 5,
+        "consumo_nominal_kw": 1030.0,
+        "total_dependencias": 14
+    }
+}
