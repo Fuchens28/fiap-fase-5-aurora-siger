@@ -383,4 +383,5 @@ O NCAS é uma simulação educacional. Os módulos, consumos, prioridades e depe
 
 ## 🔭 Continuidade temática
 
-O projeto utiliza a Aurora Siger como universo compartilhado entre as fases acadêmicas. A Fase 4 explorou a infraestrutura da colônia; o NCAS concentra-se na camada de registros, decisão lógica e apoio cognitivo. Apesar da continuidade narrativa, o código deste projeto foi desenvolvido de forma independente.
+O projeto utiliza a Aurora Siger como universo compartilhado entre as fases acadêmicas.
+
