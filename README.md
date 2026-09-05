@@ -523,9 +523,15 @@ python3 -m coverage report
 
 ### Requisitos
 
-- Python 3.10 ou superior;
-- nenhum pacote externo obrigatório;
+- **Python 3.10 ou superior** — o código usa a sintaxe de união de tipos `X | Y`;
+- **nenhum pacote externo** — o `requirements.txt` está vazio de dependências de propósito;
 - Windows, Linux ou macOS.
+
+O projeto usa apenas a biblioteca padrão. Instalar a partir do arquivo de requisitos não baixa nada, e existe para tornar essa condição explícita:
+
+```bash
+pip install -r requirements.txt
+```
 
 ### Execução
 
@@ -582,6 +588,7 @@ fiap-fase-5-aurora-siger/
 ├── regras_logicas.pdf           # regra booleana, simplificação e explicação
 ├── prompts_utilizados.pdf       # prompts criados e explicação de cada um
 ├── link_video.txt               # link do vídeo de apresentação
+├── requirements.txt             # declara ausência de dependências externas
 ├── README.md
 ├── test_ncas.py
 └── ncas_core/

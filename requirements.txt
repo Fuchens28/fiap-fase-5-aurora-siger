@@ -1,0 +1,25 @@
+# NCAS - Nucleo Cognitivo da Aurora Siger
+# Atividade Integradora - Fase 5 - Ciencia da Computacao - FIAP
+#
+# Este projeto NAO possui dependencias externas.
+#
+# O enunciado (item 2.3) determina que o codigo seja executado sem
+# bibliotecas avancadas ou frameworks externos. O arquivo esta aqui para
+# tornar essa condicao explicita: instalar a partir dele nao baixa nada.
+#
+#   pip install -r requirements.txt
+#
+# Requisito unico: Python 3.10 ou superior (o codigo usa a sintaxe de
+# uniao de tipos `X | Y`, introduzida nessa versao).
+#
+# Modulos usados, todos da biblioteca padrao:
+#
+#   Sistema    dataclasses, datetime, enum, json, math, pathlib,
+#              tempfile, typing, unicodedata
+#   Testes     contextlib, io, json, pathlib, tempfile, unittest
+#
+# Execucao do sistema:
+#   python3 codigo_fonte.py
+#
+# Execucao dos testes:
+#   python3 -m unittest discover -v
