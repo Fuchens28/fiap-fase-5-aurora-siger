@@ -1,0 +1,19 @@
+NCAS - Nucleo Cognitivo da Aurora Siger
+Atividade Integradora - Fase 5 - Ciencia da Computacao - FIAP
+Grupo 29
+
+Link do video de apresentacao (YouTube, visibilidade "Nao listado"):
+
+>>> SUBSTITUIR PELO LINK ANTES DE ENVIAR O .ZIP <<<
+
+Roteiro coberto no video (maximo 5 minutos):
+ 1. Descricao do nucleo cognitivo da Aurora Siger
+ 2. Explicacao dos dados armazenados pelo sistema
+ 3. Demonstracao da leitura e gravacao de arquivos (menus 1, 2 e 3)
+ 4. Explicacao do arquivo JSON utilizado (dados_colonia.json)
+ 5. Apresentacao da regra logica e sua simplificacao (menus 4 e 5)
+ 6. Explicacao dos prompts criados (menu 6)
+ 7. Demonstracao da interacao simulada com IA generativa (menu 7)
+ 8. Analise simples de otimizacao ou melhoria de resposta (menu 9)
+ 9. Reflexao sobre diversidade, etica e responsabilidade
+10. Demonstracao pratica do funcionamento do sistema em Python

@@ -1,0 +1,1221 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 6 /Kids [7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1304 >>
+stream
+BT
+/F2 26 Tf
+1 0 0 1 56.00 665.89 Tm
+(Regras lógicas e simplificação) Tj
+ET
+BT
+/F2 26 Tf
+1 0 0 1 56.00 633.89 Tm
+(booleana) Tj
+ET
+BT
+0.35 0.35 0.35 rg
+/F1 13 Tf
+1 0 0 1 56.00 597.89 Tm
+(Núcleo Cognitivo da Aurora Siger \(NCAS\)) Tj
+0 0 0 rg
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 565.89 m 539.28 565.89 l S 0 0 0 RG
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 539.89 Tm
+(Atividade Integradora · Fase 5 · Ciência da Computação · FIAP) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 523.89 Tm
+() Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 507.89 Tm
+(Grupo 29) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 491.89 Tm
+(Matheus Fuchelberguer · RM571321) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 475.89 Tm
+(Carlos Eugenio Andrade · RM570285) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 459.89 Tm
+(Rodrigo Gomes Dias · RM569142) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 443.89 Tm
+() Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 427.89 Tm
+(Implementação: ncas_core/logica.py) Tj
+0 0 0 rg
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (1 / 6) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Regras lógicas e simplificação booleana) Tj 0 0 0 rg ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3590 >>
+stream
+BT
+/F2 16 Tf
+1 0 0 1 56.00 773.89 Tm
+(1. Objetivo) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 754.89 m 539.28 754.89 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 740.89 Tm
+(Este documento apresenta as duas regras booleanas que governam as decisões do NCAS, a) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 726.19 Tm
+(simplificação algébrica de cada uma e a demonstração de que a forma reduzida preserva o resultado) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 711.49 Tm
+(lógico original.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 692.79 Tm
+(A primeira regra é simplificada pelos teoremas de simplificação; a segunda, pelo primeiro teorema de) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 678.09 Tm
+(De Morgan. Ambas estão implementadas na classe MotorLogico, no arquivo ncas_core/logica.py, e são) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 663.39 Tm
+(verificadas por testes automatizados que comparam a forma original com a simplificada em todas as) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 648.69 Tm
+(combinações possíveis de entrada.) Tj
+ET
+BT
+0.35 0.35 0.35 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 629.99 Tm
+(Notação adotada: “·” para AND, “+” para OR e “’” para NOT.) Tj
+0 0 0 rg
+ET
+BT
+/F2 16 Tf
+1 0 0 1 56.00 599.29 Tm
+(2. Regra 1 — Alerta operacional) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 580.29 m 539.28 580.29 l S 0 0 0 RG
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 556.29 Tm
+(2.1 Contexto operacional) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 536.29 Tm
+(A colônia registra ocorrências técnicas em seus módulos. Duas variáveis booleanas descrevem cada) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 521.59 Tm
+(ocorrência:) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 59.00 502.89 Tm
+(•) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 502.89 Tm
+(FALHA — indica se foi detectada uma falha no módulo.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 59.00 486.19 Tm
+(•) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 486.19 Tm
+(CRITICO — indica se o módulo é essencial \(prioridade P1 ou P2\).) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 469.49 Tm
+(A regra foi escrita originalmente cobrindo os dois casos de forma explícita: falha em módulo crítico e) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 454.79 Tm
+(falha em módulo não crítico.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 426.09 Tm
+(2.2 Expressão original) Tj
+ET
+0.94 0.94 0.94 rg 56.00 387.69 483.28 26.40 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 402.09 Tm
+(ALERTA = \(FALHA · CRITICO\) + \(FALHA · CRITICO'\)) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 367.69 Tm
+(2.3 Simplificação passo a passo) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 347.69 Tm
+(Passo 1 — Distributividade do produto sobre a soma \(Teorema 16\):) Tj
+ET
+0.94 0.94 0.94 rg 56.00 285.79 483.28 51.20 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 324.99 Tm
+(A·B + A·C = A·\(B + C\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 312.59 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 300.19 Tm
+(ALERTA = FALHA · \(CRITICO + CRITICO'\)) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 275.79 Tm
+(Passo 2 — Complementaridade da soma \(Teorema 4\):) Tj
+ET
+0.94 0.94 0.94 rg 56.00 213.89 483.28 51.20 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 253.09 Tm
+(A + A' = 1) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 240.69 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 228.29 Tm
+(ALERTA = FALHA · 1) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 203.89 Tm
+(Passo 3 — Identidade do produto \(Teorema 5\):) Tj
+ET
+0.94 0.94 0.94 rg 56.00 141.99 483.28 51.20 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 181.19 Tm
+(A · 1 = A) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 168.79 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 156.39 Tm
+(ALERTA = FALHA) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (2 / 6) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Regras lógicas e simplificação booleana) Tj 0 0 0 rg ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 5254 >>
+stream
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 775.89 Tm
+(2.4 Por que a simplificação mantém o mesmo resultado) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 755.89 Tm
+(Os dois termos da expressão original cobrem os únicos valores que CRITICO pode assumir. Se existe) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 741.19 Tm
+(falha, exatamente um dos dois termos é verdadeiro — o primeiro quando CRITICO é verdadeiro, o) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 726.49 Tm
+(segundo quando é falso. Como a operação OR exige apenas um termo verdadeiro, a saída é) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 711.79 Tm
+(verdadeira em ambos os casos.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 693.09 Tm
+(Se não existe falha, os dois termos contêm FALHA em uma operação AND e, portanto, ambos são) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 678.39 Tm
+(falsos. A saída depende exclusivamente de FALHA: a variável CRITICO é redundante para o ALERTA) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 663.69 Tm
+(e pode ser eliminada sem alterar o comportamento do sistema.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 634.99 Tm
+(2.5 Tabela-verdade — comprovação da equivalência) Tj
+ET
+0.9 0.9 0.9 rg 56.00 606.99 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 614.99 Tm
+(FALHA) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 155.26 614.99 Tm
+(CRITICO) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 248.53 614.99 Tm
+(\(F·C\) + \(F·C'\)) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 375.71 614.99 Tm
+(FALHA) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 460.49 614.99 Tm
+(Comparação) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 593.89 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 155.26 593.89 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 248.53 593.89 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 375.71 593.89 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 460.49 593.89 Tm
+(iguais) Tj
+ET
+0.97 0.97 0.97 rg 56.00 564.79 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 572.79 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 155.26 572.79 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 248.53 572.79 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 375.71 572.79 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 460.49 572.79 Tm
+(iguais) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 551.69 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 155.26 551.69 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 248.53 551.69 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 375.71 551.69 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 460.49 551.69 Tm
+(iguais) Tj
+ET
+0.97 0.97 0.97 rg 56.00 522.59 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 530.59 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 155.26 530.59 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 248.53 530.59 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 375.71 530.59 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 460.49 530.59 Tm
+(iguais) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 520.59 m 539.28 520.59 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 497.49 Tm
+(As colunas da forma original e da forma simplificada são idênticas nas quatro combinações. A) Tj
+0 0 0 rg
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 482.79 Tm
+(simplificação é, portanto, uma equivalência lógica.) Tj
+0 0 0 rg
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 454.09 Tm
+(2.6 O que acontece com a variável CRITICO) Tj
+ET
+0.955 0.955 0.955 rg 56.00 371.29 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 371.29 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 431.09 Tm
+(CRITICO não foi descartado do sistema. Ele deixou de influenciar o ALERTA, mas continua) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 416.39 Tm
+(sendo a variável que decide a segunda condição de operação: EMERGENCIA = FALHA ·) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 401.69 Tm
+(CRITICO. Toda falha gera alerta; apenas a falha em módulo essencial aciona o protocolo de) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 386.99 Tm
+(contingência imediata.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 360.29 Tm
+(Essa separação é intencional. Ela evita que o operador seja informado apenas de um valor booleano) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 345.59 Tm
+(agregado e permite distinguir uma ocorrência que exige registro de outra que exige ação imediata.) Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 56.00 314.89 Tm
+(3. Regra 2 — Bloqueio de consulta \(De Morgan\)) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 295.89 m 539.28 295.89 l S 0 0 0 RG
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 271.89 Tm
+(3.1 Contexto operacional) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 251.89 Tm
+(A política de acesso da colônia determina que uma consulta ao NCAS só pode ser liberada quando) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 237.19 Tm
+(duas condições ocorrem simultaneamente: o operador está autorizado e o módulo consultado está) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 222.49 Tm
+(ativo.) Tj
+ET
+0.94 0.94 0.94 rg 56.00 172.99 483.28 38.80 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 199.79 Tm
+(ACESSO   = AUTORIZADO · ATIVO) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 187.39 Tm
+(BLOQUEIO = \(AUTORIZADO · ATIVO\)') Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 152.99 Tm
+(3.2 Aplicação do primeiro teorema de De Morgan) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 132.99 Tm
+(O primeiro teorema de De Morgan estabelece que a negação de um produto lógico equivale à soma) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 118.29 Tm
+(lógica das negações individuais:) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (3 / 6) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Regras lógicas e simplificação booleana) Tj 0 0 0 rg ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 5655 >>
+stream
+0.94 0.94 0.94 rg 56.00 767.49 483.28 26.40 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 781.89 Tm
+(\(A · B\)' = A' + B') Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 757.49 Tm
+(Aplicando o teorema à expressão de bloqueio:) Tj
+ET
+0.94 0.94 0.94 rg 56.00 720.39 483.28 26.40 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 734.79 Tm
+(BLOQUEIO = AUTORIZADO' + ATIVO') Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 700.39 Tm
+(3.3 Por que a simplificação mantém o mesmo resultado) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 680.39 Tm
+(A operação AND só produz resultado verdadeiro quando ambas as entradas são verdadeiras. Negar) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 665.69 Tm
+(esse resultado significa dizer que ao menos uma das entradas falhou — que é exatamente o que a) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 650.99 Tm
+(expressão AUTORIZADO' + ATIVO' afirma, já que a operação OR é verdadeira sempre que pelo) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 636.29 Tm
+(menos um de seus termos é verdadeiro.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 607.59 Tm
+(3.4 Tabela-verdade — comprovação da equivalência) Tj
+ET
+0.9 0.9 0.9 rg 56.00 579.59 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 587.59 Tm
+(AUTORIZADO) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 180.70 587.59 Tm
+(ATIVO) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 265.49 587.59 Tm
+(\(A·B\)') Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 358.75 587.59 Tm
+(A' + B') Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 452.02 587.59 Tm
+(Comparação) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 566.49 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 180.70 566.49 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 265.49 566.49 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 358.75 566.49 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 452.02 566.49 Tm
+(iguais) Tj
+ET
+0.97 0.97 0.97 rg 56.00 537.39 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 545.39 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 180.70 545.39 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 265.49 545.39 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 358.75 545.39 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 452.02 545.39 Tm
+(iguais) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 524.29 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 180.70 524.29 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 265.49 524.29 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 358.75 524.29 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 452.02 524.29 Tm
+(iguais) Tj
+ET
+0.97 0.97 0.97 rg 56.00 495.19 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 503.19 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 180.70 503.19 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 265.49 503.19 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 358.75 503.19 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 452.02 503.19 Tm
+(iguais) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 493.19 m 539.28 493.19 l S 0 0 0 RG
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 460.09 Tm
+(3.5 Ganho prático da forma negada) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 440.09 Tm
+(Neste caso a simplificação não reduz o número de operações — ela muda a forma da expressão, e é) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 425.39 Tm
+(justamente essa mudança que interessa ao sistema.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 406.69 Tm
+(A forma original produz um único valor booleano: a consulta foi bloqueada ou não. A forma obtida por) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 391.99 Tm
+(De Morgan expõe os dois termos que causam o bloqueio separadamente, o que permite ao NCAS) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 377.29 Tm
+(avaliar cada um e informar a causa específica ao operador.) Tj
+ET
+0.9 0.9 0.9 rg 56.00 350.59 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 358.59 Tm
+(AUTORIZADO) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 358.59 Tm
+(ATIVO) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 235.98 358.59 Tm
+(Mensagem exibida pelo sistema) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 337.49 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 337.49 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 235.98 337.49 Tm
+(Acesso liberado: operador autorizado e módulo ativo.) Tj
+ET
+0.97 0.97 0.97 rg 56.00 308.39 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 316.39 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 316.39 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 235.98 316.39 Tm
+(Acesso bloqueado: módulo inativo.) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 295.29 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 295.29 Tm
+(VERDADEIRO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 235.98 295.29 Tm
+(Acesso bloqueado: operador não autorizado.) Tj
+ET
+0.97 0.97 0.97 rg 56.00 266.19 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 274.19 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 274.19 Tm
+(FALSO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 235.98 274.19 Tm
+(Acesso bloqueado: operador não autorizado e módulo inativo.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 264.19 m 539.28 264.19 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 241.09 Tm
+(A mensagem é montada pelo método MotorLogico.motivo_bloqueio\(\), que avalia AUTORIZADO' e) Tj
+0 0 0 rg
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 226.39 Tm
+(ATIVO' de forma independente.) Tj
+0 0 0 rg
+ET
+BT
+/F2 16 Tf
+1 0 0 1 56.00 195.69 Tm
+(4. Implementação no sistema) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 176.69 m 539.28 176.69 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 162.69 Tm
+(As duas regras estão isoladas na classe MotorLogico. As formas original e simplificada são mantidas) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 147.99 Tm
+(lado a lado de propósito: isso permite que os testes automatizados comprovem a equivalência a cada) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 133.29 Tm
+(execução, em vez de a equivalência depender apenas da demonstração em papel.) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (4 / 6) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Regras lógicas e simplificação booleana) Tj 0 0 0 rg ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 4771 >>
+stream
+0.94 0.94 0.94 rg 56.00 519.49 483.28 274.40 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 781.89 Tm
+(# ncas_core/logica.py) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 769.49 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 757.09 Tm
+(@staticmethod) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 744.69 Tm
+(def calcular_alerta\(falha: bool, critico: bool\) -> bool:) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 732.29 Tm
+(    """ALERTA = \(FALHA . CRITICO\) + \(FALHA . CRITICO'\)""") Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 719.89 Tm
+(    return \(falha and critico\) or \(falha and not critico\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 707.49 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 695.09 Tm
+(@staticmethod) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 682.69 Tm
+(def calcular_alerta_simplificado\(falha: bool, critico: bool\) -> bool:) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 670.29 Tm
+(    """ALERTA = FALHA""") Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 657.89 Tm
+(    return falha) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 645.49 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 633.09 Tm
+(@staticmethod) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 620.69 Tm
+(def calcular_bloqueio\(autorizado: bool, modulo_ativo: bool\) -> bool:) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 608.29 Tm
+(    """BLOQUEIO = \(AUTORIZADO . ATIVO\)'""") Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 595.89 Tm
+(    return not \(autorizado and modulo_ativo\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 583.49 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 571.09 Tm
+(@staticmethod) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 558.69 Tm
+(def calcular_bloqueio_simplificado\(autorizado, modulo_ativo\) -> bool:) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 546.29 Tm
+(    """BLOQUEIO = AUTORIZADO' + ATIVO'""") Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 533.89 Tm
+(    return \(not autorizado\) or \(not modulo_ativo\)) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 499.49 Tm
+(4.1 Verificação automatizada) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 479.49 Tm
+(Os testes percorrem todas as combinações de entrada e exigem que as duas formas produzam saídas) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 464.79 Tm
+(idênticas. Se alguém alterar uma das expressões, o teste falha.) Tj
+ET
+0.94 0.94 0.94 rg 56.00 340.89 483.28 113.20 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 442.09 Tm
+(def test_forma_simplificada_equivale_a_original\(self\) -> None:) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 429.69 Tm
+(    for falha in \(False, True\):) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 417.29 Tm
+(        for critico in \(False, True\):) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 404.89 Tm
+(            with self.subTest\(falha=falha, critico=critico\):) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 392.49 Tm
+(                self.assertEqual\() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 380.09 Tm
+(                    MotorLogico.calcular_alerta\(falha, critico\),) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 367.69 Tm
+(                    MotorLogico.calcular_alerta_simplificado\(falha, critico\),) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 355.29 Tm
+(                \)) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 320.89 Tm
+(4.2 Onde as regras são usadas) Tj
+ET
+0.9 0.9 0.9 rg 56.00 292.89 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 300.89 Tm
+(Regra) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 300.89 Tm
+(Onde é aplicada) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 332.64 300.89 Tm
+(Efeito no sistema) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 279.79 Tm
+(ALERTA) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 279.79 Tm
+(Menu 4 e diagnóstico \(menu 7\)) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 332.64 279.79 Tm
+(Marca a ocorrência e a grava nos arquivos) Tj
+ET
+0.97 0.97 0.97 rg 56.00 250.69 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 258.69 Tm
+(EMERGENCIA) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 258.69 Tm
+(Diagnóstico \(menu 7\)) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 332.64 258.69 Tm
+(Aciona o protocolo de contingência) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 237.59 Tm
+(BLOQUEIO) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 237.59 Tm
+(Menu 5) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 332.64 237.59 Tm
+(Libera ou nega a consulta e informa a causa) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 227.59 m 539.28 227.59 l S 0 0 0 RG
+BT
+/F2 16 Tf
+1 0 0 1 56.00 192.49 Tm
+(5. Conclusão) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 173.49 m 539.28 173.49 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 159.49 Tm
+(As duas regras foram reduzidas por caminhos diferentes e cada redução foi comprovada por) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 144.79 Tm
+(tabela-verdade e por teste automatizado. A primeira eliminou uma variável redundante, tornando a) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 130.09 Tm
+(expressão mais curta. A segunda reorganizou a expressão sem encurtá-la, tornando a decisão) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 115.39 Tm
+(explicável ao operador.) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (5 / 6) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Regras lógicas e simplificação booleana) Tj 0 0 0 rg ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 445 >>
+stream
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 785.89 Tm
+(Em ambos os casos a simplificação preserva integralmente o resultado lógico: nenhuma combinação) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 771.19 Tm
+(de entradas produz saída diferente da expressão original.) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (6 / 6) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Regras lógicas e simplificação booleana) Tj 0 0 0 rg ET
+endstream
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000155 00000 n 
+0000000252 00000 n 
+0000000354 00000 n 
+0000000449 00000 n 
+0000000554 00000 n 
+0000000716 00000 n 
+0000002072 00000 n 
+0000002235 00000 n 
+0000005878 00000 n 
+0000006042 00000 n 
+0000011349 00000 n 
+0000011513 00000 n 
+0000017221 00000 n 
+0000017385 00000 n 
+0000022209 00000 n 
+0000022373 00000 n 
+trailer
+<< /Size 19 /Root 1 0 R >>
+startxref
+22870
+%%EOF

@@ -1,10 +1,16 @@
-"""Interface de terminal do NCAS."""
+"""Interface de terminal do NCAS.
+
+Concentra o menu de navegacao e os fluxos do operador. Cada opcao do menu
+corresponde a um metodo desta classe, e os metodos apenas coordenam os
+modulos especializados (persistencia, logica, prompts, otimizacao).
+"""
 
 from __future__ import annotations
 
 import json
 from datetime import datetime
 
+from . import otimizacao
 from .conhecimento import BaseConhecimento
 from .infraestrutura import (
     aplicar_cenario,
@@ -15,26 +21,31 @@ from .infraestrutura import (
 )
 from .logica import MotorLogico
 from .modelos import ModuleStatus, RegistroColonia
-from .prompts import SimuladorIA
+from .prompts import CatalogoPrompts, SimuladorIA
 from .repositorio import RepositorioColonia
 from .resiliencia import avaliar_resiliencia
 
 
 class AplicacaoNCAS:
-    """Coordena menu, infraestrutura, regras e persistência."""
+    """Coordena menu, infraestrutura, regras logicas e persistencia."""
 
     def __init__(self) -> None:
         self.repositorio = RepositorioColonia()
         self.rede = build_aurora_colony()
         self.base_conhecimento = BaseConhecimento()
+        self.catalogo = CatalogoPrompts()
+        self.modelo_risco = otimizacao.treinar()
         if self.repositorio.avisos_leitura:
-            print("Avisos durante a leitura do arquivo texto:")
+            print("Avisos durante a leitura dos arquivos:")
             for aviso in self.repositorio.avisos_leitura:
                 print(f"- {aviso}")
 
+    # ------------------------------------------------------------------
+    # Entrada de dados
+    # ------------------------------------------------------------------
     @staticmethod
     def ler_booleano(pergunta: str) -> bool:
-        """Converte respostas comuns do usuário para booleano."""
+        """Converte as respostas comuns do usuario para booleano."""
         while True:
             resposta = input(f"{pergunta} (s/n): ").strip().lower()
             if resposta in {"s", "sim"}:
@@ -43,8 +54,11 @@ class AplicacaoNCAS:
                 return False
             print("Resposta inválida. Digite s para sim ou n para não.")
 
+    # ------------------------------------------------------------------
+    # 1 a 3 - Registros e arquivos
+    # ------------------------------------------------------------------
     def cadastrar_registro(self) -> None:
-        """Coleta e persiste um registro informado pelo usuário."""
+        """Coleta um evento informado pelo operador e o persiste."""
         print("\n--- Cadastro de registro ---")
         registro = RegistroColonia(
             id_registro=self.repositorio.proximo_id(),
@@ -56,10 +70,10 @@ class AplicacaoNCAS:
         )
         self.repositorio.adicionar(registro)
         self.repositorio.salvar_json(self.rede)
-        print(f"Registro {registro.id_registro} salvo com sucesso.")
+        print(f"Registro {registro.id_registro} salvo em texto e em JSON.")
 
     def consultar_registros(self) -> None:
-        """Exibe registros carregados do arquivo texto."""
+        """Exibe os registros carregados na memoria do sistema."""
         print("\n--- Registros salvos ---")
         registros = self.repositorio.consultar()
         if not registros:
@@ -69,8 +83,12 @@ class AplicacaoNCAS:
             print(
                 f"#{registro.id_registro} | {registro.data_hora} | "
                 f"{registro.categoria} | {registro.descricao} | "
-                f"falha={registro.falha} | critico={registro.critico}"
+                f"falha={registro.falha} | critico={registro.critico} | "
+                f"revisao={registro.revisao_humana}"
             )
+        print(f"\nTotal: {len(registros)} registro(s).")
+        print("Primeira linha do arquivo texto (readline):")
+        print(f"  {self.repositorio.primeira_linha_txt() or '(arquivo vazio)'}")
 
     def carregar_dados_json(self) -> None:
         """Carrega e exibe o documento JSON estruturado."""
@@ -85,27 +103,95 @@ class AplicacaoNCAS:
             return
         print(json.dumps(documento, ensure_ascii=False, indent=4))
 
-    def aplicar_regra_logica(self) -> None:
-        """Solicita valores booleanos e mostra resultado e demonstração."""
-        print("\n--- Regra lógica de alerta ---")
+    # ------------------------------------------------------------------
+    # 4 e 5 - Regras logicas
+    # ------------------------------------------------------------------
+    def aplicar_regra_alerta(self) -> None:
+        """Regra 1: avalia o alerta e demonstra a simplificacao algebrica."""
+        print("\n--- Regra 1: alerta operacional ---")
         falha = self.ler_booleano("Existe uma falha")
         critico = self.ler_booleano("O evento é crítico")
-        print(f"Resultado: ALERTA = {MotorLogico.calcular_alerta(falha, critico)}")
-        print(MotorLogico.explicar_regra())
-        print("\nTabela-verdade:")
+        print(f"\nALERTA      = {MotorLogico.calcular_alerta(falha, critico)}")
+        print(f"EMERGENCIA  = {MotorLogico.calcular_emergencia(falha, critico)}")
+        print(f"\n{MotorLogico.explicar_regra()}")
+        print("\nTabela-verdade (original x simplificada):")
+        print("FALHA | CRITICO | ORIGINAL | SIMPLIFICADA")
         for linha in MotorLogico.tabela_verdade():
             print(
-                f"FALHA={linha['FALHA']} | CRITICO={linha['CRITICO']} | "
-                f"ALERTA={linha['ALERTA']}"
+                f"{str(linha['FALHA']):<5} | {str(linha['CRITICO']):<7} | "
+                f"{str(linha['ALERTA_ORIGINAL']):<8} | "
+                f"{linha['ALERTA_SIMPLIFICADO']}"
             )
+        print("\nAs duas colunas são idênticas: a simplificação preserva o resultado.")
 
+    def aplicar_regra_acesso(self) -> None:
+        """Regra 2: avalia o bloqueio e demonstra o teorema de De Morgan."""
+        print("\n--- Regra 2: acesso à consulta ---")
+        autorizado = self.ler_booleano("O operador está autorizado")
+        ativo = self.ler_booleano("O módulo está ativo")
+        print(f"\nACESSO   = {MotorLogico.calcular_acesso(autorizado, ativo)}")
+        print(f"BLOQUEIO = {MotorLogico.calcular_bloqueio(autorizado, ativo)}")
+        print(f"\n{MotorLogico.motivo_bloqueio(autorizado, ativo)}")
+        print(f"\n{MotorLogico.explicar_bloqueio()}")
+        print("\nTabela-verdade (original x De Morgan):")
+        print("AUTORIZADO | ATIVO | (A.B)' | A' + B'")
+        for linha in MotorLogico.tabela_verdade_bloqueio():
+            print(
+                f"{str(linha['AUTORIZADO']):<10} | {str(linha['ATIVO']):<5} | "
+                f"{str(linha['BLOQUEIO_ORIGINAL']):<6} | "
+                f"{linha['BLOQUEIO_SIMPLIFICADO']}"
+            )
+        print("\nAs duas colunas são idênticas: De Morgan preserva o resultado.")
+
+    # ------------------------------------------------------------------
+    # 6 - Prompts estruturados
+    # ------------------------------------------------------------------
+    def exibir_prompts(self) -> None:
+        """Exibe o catalogo de prompts estruturados e a resposta simulada."""
+        print("\n--- Prompts estruturados (prompts.json) ---")
+        catalogo = self.catalogo.listar()
+        for numero, (_, titulo, tecnica) in enumerate(catalogo, start=1):
+            print(f"{numero}. [{tecnica}] {titulo}")
+        print("0. Exibir todos")
+        escolha = input("Escolha um prompt: ").strip()
+
+        if escolha == "0":
+            selecionados = [id_prompt for id_prompt, _, _ in catalogo]
+        else:
+            try:
+                indice = int(escolha) - 1
+                if not 0 <= indice < len(catalogo):
+                    raise ValueError
+            except ValueError:
+                print("Opção inválida.")
+                return
+            selecionados = [catalogo[indice][0]]
+
+        exemplo_alerta = (
+            "LSS (Sistema de Suporte de Vida, P1) em estado DESLIGADO. "
+            "Impacto em AGR, HAB e MED. 759 kW comprometidos."
+        )
+        variaveis = {
+            "alerta": exemplo_alerta,
+            "ocorrencia": exemplo_alerta,
+            "registro": "LSS SHUTDOWN, 759 kW comprometidos.",
+            "solicitacao": "A luminaria da bancada 3 do laboratorio queimou.",
+            "ocorrencias": "A: falha no LSS (P1). B: falha no LOG (P4).",
+        }
+        for id_prompt in selecionados:
+            print()
+            print(self.catalogo.descrever(id_prompt, **variaveis))
+            print("-" * 60)
+
+    # ------------------------------------------------------------------
+    # 7 - Diagnostico
+    # ------------------------------------------------------------------
     def diagnosticar_infraestrutura(self) -> None:
-        """Analisa um módulo local e registra o diagnóstico."""
+        """Analisa um modulo, aplica as regras e registra o diagnostico."""
         print("\n--- Diagnóstico da infraestrutura ---")
         modulos = self.rede.modules
         ativos = sum(
-            modulo.status == ModuleStatus.OPERATIONAL
-            for modulo in modulos.values()
+            modulo.status == ModuleStatus.OPERATIONAL for modulo in modulos.values()
         )
         print(f"Rede carregada: {len(modulos)} módulos | {ativos} ativos")
         modulo_id = input("ID do módulo (ex.: LSS, MED, PWR): ").strip().upper()
@@ -119,33 +205,45 @@ class AplicacaoNCAS:
         critico = modulo.priority <= 2
         alerta = MotorLogico.calcular_alerta(falha, critico)
         emergencia = MotorLogico.calcular_emergencia(falha, critico)
+
+        impacto = impacto_falha(self.rede, modulo_id)
         consulta = f"{modulo.module_id} {modulo.name} falha P{modulo.priority}"
         documentos = self.base_conhecimento.buscar(consulta)
         contexto = self.base_conhecimento.formatar_contexto(documentos)
         resiliencia = avaliar_resiliencia(self.rede, modulo_id)
+
+        risco = otimizacao.prever_risco(
+            self.modelo_risco,
+            modulo.priority,
+            len(impacto),
+            float(resiliencia["consumo_comprometido_kw"]),
+        )
+        faixa_risco = otimizacao.classificar_risco(risco)
+        texto_risco = f"{risco:.2f} ({faixa_risco})"
+
         recomendacao = SimuladorIA.recomendacao_diagnostico(
             modulo.module_id,
             modulo.name,
             modulo.priority,
             str(modulo.status),
-            impacto_falha(self.rede, modulo_id),
+            impacto,
             contexto,
             str(resiliencia["nivel"]),
+            texto_risco,
         )
-        print(f"Módulo: {modulo.module_id} - {modulo.name}")
+
+        print(f"\nMódulo: {modulo.module_id} - {modulo.name}")
         print(f"Status: {modulo.status} | Prioridade: P{modulo.priority}")
         print(f"Consumo nominal: {modulo.energy_consumption_kw:.1f} kW")
         print(f"FALHA={falha} | CRITICO={critico} | ALERTA={alerta}")
         print(f"EMERGENCIA={emergencia}")
-        impacto = impacto_falha(self.rede, modulo_id)
         print(f"Impacto previsto: {', '.join(impacto)}")
         print(f"Resiliência: {resiliencia['nivel']}")
         print(f"Consumo comprometido: {resiliencia['consumo_comprometido_kw']} kW")
+        print(f"Índice de risco (modelo otimizado): {texto_risco}")
         print(f"Contexto recuperado: {contexto}")
         print("Revisão humana: PENDENTE")
-        print(
-            recomendacao
-        )
+        print(recomendacao)
 
         registro = RegistroColonia(
             id_registro=self.repositorio.proximo_id(),
@@ -160,19 +258,13 @@ class AplicacaoNCAS:
         )
         self.repositorio.adicionar(registro)
         self.repositorio.salvar_json(self.rede)
-        print(f"Diagnóstico registrado como #{registro.id_registro}.")
+        print(f"\nDiagnóstico registrado como #{registro.id_registro}.")
 
-    @staticmethod
-    def exibir_prompts() -> None:
-        """Exibe as três estratégias de prompt simuladas."""
-        print("\n--- Prompts simulados ---")
-        pergunta = input("Pergunta zero-shot: ").strip() or "Qual o estado da colônia?"
-        print(SimuladorIA.zero_shot(pergunta))
-        print(f"\n{SimuladorIA.few_shot()}")
-        print(f"\n{SimuladorIA.saida_json()}")
-
+    # ------------------------------------------------------------------
+    # 8 e 9 - Conhecimento e otimizacao
+    # ------------------------------------------------------------------
     def consultar_base_conhecimento(self) -> None:
-        """Demonstra a etapa de recuperação do fluxo RAG local."""
+        """Demonstra a etapa de recuperacao de contexto do fluxo RAG local."""
         print("\n--- Base de conhecimento local (RAG) ---")
         consulta = input("Digite um tema ou módulo: ").strip()
         documentos = self.base_conhecimento.buscar(consulta)
@@ -181,8 +273,30 @@ class AplicacaoNCAS:
             return
         print(self.base_conhecimento.formatar_contexto(documentos))
 
+    def otimizar_indice_risco(self) -> None:
+        """Exibe o ajuste do modelo de risco por gradiente descendente."""
+        print("\n--- Otimização do índice de risco ---")
+        print(otimizacao.relatorio(self.modelo_risco))
+        print("\nPrevisão para os módulos da colônia:")
+        for modulo in self.rede.modules.values():
+            impacto = impacto_falha(self.rede, modulo.module_id)
+            consumo = sum(
+                self.rede.modules[item].energy_consumption_kw for item in impacto
+            )
+            risco = otimizacao.prever_risco(
+                self.modelo_risco, modulo.priority, len(impacto), consumo
+            )
+            print(
+                f"  {modulo.module_id:<4} P{modulo.priority} | "
+                f"{len(impacto)} módulo(s) | {consumo:7.1f} kW | "
+                f"risco={risco:.2f} ({otimizacao.classificar_risco(risco)})"
+            )
+
+    # ------------------------------------------------------------------
+    # 10 a 13 - Operacao
+    # ------------------------------------------------------------------
     def exibir_painel(self) -> None:
-        """Exibe uma visão consolidada da operação da colônia."""
+        """Exibe uma visao consolidada da operacao da colonia."""
         resumo = resumo_rede(self.rede)
         registros = self.repositorio.consultar()
         print("\n--- Painel operacional da colônia ---")
@@ -196,9 +310,14 @@ class AplicacaoNCAS:
             "Emergências registradas: "
             f"{sum(registro.falha and registro.critico for registro in registros)}"
         )
+        print(
+            "Revisões pendentes: "
+            f"{sum(registro.revisao_humana == 'PENDENTE' for registro in registros)}"
+        )
 
     def alterar_status_modulo(self) -> None:
-        """Altera o status operacional de um módulo para simulação."""
+        """Altera o status operacional de um modulo, para simulacao."""
+        print("\n--- Alteração de status ---")
         modulo_id = input("ID do módulo: ").strip().upper()
         modulo = self.rede.modules.get(modulo_id)
         if modulo is None:
@@ -219,7 +338,7 @@ class AplicacaoNCAS:
         print(f"Status de {modulo_id} alterado para {status}.")
 
     def executar_cenario(self) -> None:
-        """Aplica um cenário pronto ou restaura a rede original."""
+        """Aplica um cenario pronto ou restaura a rede original."""
         print("\n--- Cenários de demonstração ---")
         for codigo, descricao in listar_cenarios():
             print(f"{codigo}. {descricao}")
@@ -236,13 +355,13 @@ class AplicacaoNCAS:
         print(f"Cenário aplicado ao módulo {modulo_id}.")
 
     def revisar_decisao(self) -> None:
-        """Permite ao operador revisar uma decisão registrada."""
+        """Permite ao operador aprovar ou rejeitar uma decisao registrada."""
+        print("\n--- Revisão humana ---")
         pendentes = [
             registro
             for registro in self.repositorio.consultar()
             if registro.revisao_humana == "PENDENTE"
         ]
-        print("\n--- Revisão humana ---")
         if not pendentes:
             print("Nenhuma decisão pendente.")
             return
@@ -265,37 +384,50 @@ class AplicacaoNCAS:
         self.repositorio.salvar_json(self.rede)
         print(f"Registro #{id_registro} atualizado para {status}.")
 
+    # ------------------------------------------------------------------
+    # Menu principal
+    # ------------------------------------------------------------------
+    MENU = (
+        "\n=== NCAS | Núcleo Cognitivo da Aurora Siger ===\n"
+        "-- Registros e arquivos --\n"
+        " 1. Cadastrar registro (texto + JSON)\n"
+        " 2. Consultar registros salvos\n"
+        " 3. Carregar dados do arquivo JSON\n"
+        "-- Regras lógicas --\n"
+        " 4. Regra de alerta (teoremas de simplificação)\n"
+        " 5. Regra de acesso (teorema de De Morgan)\n"
+        "-- Inteligência simulada --\n"
+        " 6. Exibir prompts estruturados\n"
+        " 7. Diagnosticar infraestrutura\n"
+        " 8. Consultar base de conhecimento (RAG)\n"
+        " 9. Otimizar índice de risco (MSE)\n"
+        "-- Operação --\n"
+        "10. Exibir painel operacional\n"
+        "11. Alterar status de módulo\n"
+        "12. Executar cenário de demonstração\n"
+        "13. Revisar decisão humana\n"
+        " 0. Sair"
+    )
+
     def executar(self) -> None:
-        """Mantém o menu ativo até o usuário escolher sair."""
+        """Mantem o menu ativo ate o operador escolher sair."""
         opcoes = {
             "1": self.cadastrar_registro,
             "2": self.consultar_registros,
             "3": self.carregar_dados_json,
-            "4": self.aplicar_regra_logica,
-            "5": self.exibir_prompts,
-            "6": self.diagnosticar_infraestrutura,
-            "7": self.consultar_base_conhecimento,
-            "8": self.exibir_painel,
-            "9": self.alterar_status_modulo,
-            "10": self.executar_cenario,
-            "11": self.revisar_decisao,
+            "4": self.aplicar_regra_alerta,
+            "5": self.aplicar_regra_acesso,
+            "6": self.exibir_prompts,
+            "7": self.diagnosticar_infraestrutura,
+            "8": self.consultar_base_conhecimento,
+            "9": self.otimizar_indice_risco,
+            "10": self.exibir_painel,
+            "11": self.alterar_status_modulo,
+            "12": self.executar_cenario,
+            "13": self.revisar_decisao,
         }
         while True:
-            print(
-                "\n=== NCAS | Núcleo Cognitivo da Aurora Siger ===\n"
-                "1. Cadastrar registro\n"
-                "2. Consultar registros\n"
-                "3. Carregar dados JSON\n"
-                "4. Aplicar regra lógica\n"
-                "5. Exibir prompts simulados\n"
-                "6. Diagnosticar infraestrutura\n"
-                "7. Consultar base de conhecimento (RAG)\n"
-                "8. Exibir painel operacional\n"
-                "9. Alterar status de módulo\n"
-                "10. Executar cenário de demonstração\n"
-                "11. Revisar decisão humana\n"
-                "0. Sair"
-            )
+            print(self.MENU)
             try:
                 escolha = input("Escolha uma opção: ").strip()
             except (EOFError, KeyboardInterrupt):
@@ -310,5 +442,9 @@ class AplicacaoNCAS:
                 continue
             try:
                 acao()
+            except (EOFError, KeyboardInterrupt):
+                # Encerra com seguranca se a entrada acabar no meio de um fluxo.
+                print("\nEncerrando o NCAS.")
+                return
             except (OSError, ValueError) as erro:
                 print(f"Operação não concluída: {erro}")
