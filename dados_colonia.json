@@ -1,13 +1,42 @@
 {
-    "sistema": "Nucleo Cognitivo da Aurora Siger (NCAS)",
-    "atualizado_em": "2026-08-27T22:55:42.809533-03:00",
-    "total_registros": 1,
+    "sistema": "Núcleo Cognitivo da Aurora Siger (NCAS)",
+    "atualizado_em": "2026-09-04T22:20:24.775274-03:00",
+    "total_registros": 4,
     "registros": [
         {
             "id_registro": 1,
-            "data_hora": "2026-08-27T22:55:42-03:00",
+            "data_hora": "2026-09-03T14:12:00-03:00",
+            "categoria": "Alerta operacional",
+            "descricao": "Consumo do modulo AGR acima da media do ciclo",
+            "falha": true,
+            "critico": false,
+            "modulo_id": null,
+            "impacto": [],
+            "recomendacao": "",
+            "revisao_humana": "PENDENTE"
+        },
+        {
+            "id_registro": 2,
+            "data_hora": "2026-09-03T14:53:00-03:00",
             "categoria": "Diagnostico de infraestrutura",
-            "descricao": "LSS: OPERACIONAL",
+            "descricao": "COM: DEGRADADO",
+            "falha": true,
+            "critico": false,
+            "modulo_id": "COM",
+            "impacto": [
+                "COM",
+                "LOG",
+                "MIN",
+                "RES"
+            ],
+            "recomendacao": "[RECOMENDAÇÃO CONTEXTUAL]\nMódulo: COM - Sistema de Comunicacao\nPrioridade: P3 (operacional) | Status: DEGRADADO\nImpacto previsto: COM, LOG, MIN, RES\nContexto recuperado: - Falha de comunicação: Usar o canal redundante, verificar os enlaces e registrar a perda de comunicação para auditoria.\n- Falha operacional geral: Isolar o componente, avaliar o impacto nas dependências e encaminhar a manutenção responsável.\nResiliência: ALTO\nÍndice de risco estimado: 0.54 (MODERADO)\nAção simulada: isolar o módulo, avaliar dependências e iniciar manutenção.",
+            "revisao_humana": "APROVADA"
+        },
+        {
+            "id_registro": 3,
+            "data_hora": "2026-09-03T16:18:00-03:00",
+            "categoria": "Diagnostico de infraestrutura",
+            "descricao": "LSS: DESLIGADO",
             "falha": true,
             "critico": true,
             "modulo_id": "LSS",
@@ -17,7 +46,19 @@
                 "LSS",
                 "MED"
             ],
-            "recomendacao": "[RECOMENDAÇÃO CONTEXTUAL]\nMódulo: LSS - Sistema de Suporte de Vida\nPrioridade: P1 (crítico) | Status: OPERACIONAL\nImpacto previsto: AGR, HAB, LSS, MED\nContexto recuperado: - Falha no suporte de vida: Preservar o suporte de vida, isolar o módulo afetado e acionar a equipe de contingência imediatamente.\n- Falha no complexo de energia: Ativar a fonte alternativa, priorizar módulos P1 e monitorar o consumo durante a recuperação.\n- Falha operacional geral: Isolar o componente, avaliar o impacto nas dependências e encaminhar a manutenção responsável.\nResiliência: CRITICO\nAção simulada: ativar o protocolo de contingência e preservar o suporte de vida.",
+            "recomendacao": "[RECOMENDAÇÃO CONTEXTUAL]\nMódulo: LSS - Sistema de Suporte de Vida\nPrioridade: P1 (crítico) | Status: DESLIGADO\nImpacto previsto: AGR, HAB, LSS, MED\nContexto recuperado: - Falha no suporte de vida: Preservar o suporte de vida, isolar o módulo afetado e acionar a equipe de contingência imediatamente.\n- Falha no complexo de energia: Ativar a fonte alternativa, priorizar módulos P1 e monitorar o consumo durante a recuperação.\n- Falha operacional geral: Isolar o componente, avaliar o impacto nas dependências e encaminhar a manutenção responsável.\nResiliência: CRITICO\nÍndice de risco estimado: 0.90 (CRITICO)\nAção simulada: ativar o protocolo de contingência e preservar o suporte de vida.",
+            "revisao_humana": "APROVADA"
+        },
+        {
+            "id_registro": 4,
+            "data_hora": "2026-09-03T17:12:00-03:00",
+            "categoria": "Solicitacao da tripulacao",
+            "descricao": "Reposicao de filtros de agua para o ciclo 12",
+            "falha": false,
+            "critico": false,
+            "modulo_id": null,
+            "impacto": [],
+            "recomendacao": "",
             "revisao_humana": "PENDENTE"
         }
     ],

@@ -1,1 +1,4 @@
-1|2026-08-27T22:55:42-03:00|Diagnostico de infraestrutura|LSS: OPERACIONAL|True|True
+1|2026-09-03T14:12:00-03:00|Alerta operacional|Consumo do modulo AGR acima da media do ciclo|True|False
+2|2026-09-03T14:53:00-03:00|Diagnostico de infraestrutura|COM: DEGRADADO|True|False
+3|2026-09-03T16:18:00-03:00|Diagnostico de infraestrutura|LSS: DESLIGADO|True|True
+4|2026-09-03T17:12:00-03:00|Solicitacao da tripulacao|Reposicao de filtros de agua para o ciclo 12|False|False

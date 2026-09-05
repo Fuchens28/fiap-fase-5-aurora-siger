@@ -1,0 +1,1860 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 8 /Kids [7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1324 >>
+stream
+BT
+/F2 26 Tf
+1 0 0 1 56.00 665.89 Tm
+(Prompts utilizados) Tj
+ET
+BT
+0.35 0.35 0.35 rg
+/F1 13 Tf
+1 0 0 1 56.00 629.89 Tm
+(Núcleo Cognitivo da Aurora Siger \(NCAS\)) Tj
+0 0 0 rg
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 597.89 m 539.28 597.89 l S 0 0 0 RG
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 571.89 Tm
+(Atividade Integradora · Fase 5 · Ciência da Computação · FIAP) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 555.89 Tm
+() Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 539.89 Tm
+(Grupo 29) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 523.89 Tm
+(Matheus Fuchelberguer · RM571321) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 507.89 Tm
+(Carlos Eugenio Andrade · RM570285) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 491.89 Tm
+(Rodrigo Gomes Dias · RM569142) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 475.89 Tm
+() Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 459.89 Tm
+(Catálogo: ncas_core/prompts.json \(versão 1.0\)) Tj
+0 0 0 rg
+ET
+BT
+0.25 0.25 0.25 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 443.89 Tm
+(Total de prompts: 6) Tj
+0 0 0 rg
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (1 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 5358 >>
+stream
+BT
+/F2 16 Tf
+1 0 0 1 56.00 773.89 Tm
+(1. Como os prompts foram projetados) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 754.89 m 539.28 754.89 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 740.89 Tm
+(O NCAS não realiza chamadas a APIs de inteligência artificial. Os prompts são montados pelo sistema) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 726.19 Tm
+(e as respostas são simuladas localmente, o que mantém a demonstração reproduzível e sem) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 711.49 Tm
+(dependências externas. O que está sendo demonstrado é a estrutura dos prompts e a lógica que) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 696.79 Tm
+(decide qual deles usar em cada situação.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 678.09 Tm
+(Todos os prompts seguem os quatro elementos de projeto estudados: cada um declara a tarefa,) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 663.39 Tm
+(fornece o contexto que o modelo não teria como adivinhar, apresenta exemplos quando a tarefa) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 648.69 Tm
+(depende de convenções internas, e especifica o formato exato da resposta esperada.) Tj
+ET
+0.9 0.9 0.9 rg 56.00 621.99 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 629.99 Tm
+(Elemento) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 160.85 629.99 Tm
+(Função) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 380.53 629.99 Tm
+(Onde aparece no catálogo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 608.89 Tm
+(Tarefa) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 160.85 608.89 Tm
+(O que o modelo deve fazer) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 380.53 608.89 Tm
+(campo tarefa) Tj
+ET
+0.97 0.97 0.97 rg 56.00 579.79 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 587.79 Tm
+(Contexto) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 160.85 587.79 Tm
+(Informação que não está na instrução) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 380.53 587.79 Tm
+(campo contexto) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 566.69 Tm
+(Exemplos) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 160.85 566.69 Tm
+(Como uma boa saída se parece) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 380.53 566.69 Tm
+(campo exemplos) Tj
+ET
+0.97 0.97 0.97 rg 56.00 537.59 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 545.59 Tm
+(Formato) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 160.85 545.59 Tm
+(Forma, tom e extensão da resposta) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 380.53 545.59 Tm
+(campo formato_saida) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 535.59 m 539.28 535.59 l S 0 0 0 RG
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 502.49 Tm
+(1.1 Armazenamento e montagem) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 482.49 Tm
+(Os prompts não estão embutidos no código: ficam em ncas_core/prompts.json, junto do template que) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 467.79 Tm
+(define a ordem dos elementos e da lista de variáveis que o sistema precisa preencher. Isso permite) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 453.09 Tm
+(revisar ou acrescentar um prompt sem alterar a lógica da aplicação.) Tj
+ET
+0.94 0.94 0.94 rg 56.00 267.19 483.28 175.20 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 430.39 Tm
+(# ncas_core/prompts.py) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 417.99 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 405.59 Tm
+(def renderizar\(self, id_prompt: str, **variaveis: str\) -> str:) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 393.19 Tm
+(    prompt = self.obter\(id_prompt\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 380.79 Tm
+(    valores = {) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 368.39 Tm
+(        "contexto": prompt["contexto"],) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 355.99 Tm
+(        "tarefa": prompt["tarefa"],) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 343.59 Tm
+(        "formato_saida": prompt["formato_saida"],) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 331.19 Tm
+(        "exemplos": "\\n".join\(prompt.get\("exemplos", []\)\),) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 318.79 Tm
+(    }) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 306.39 Tm
+(    for nome in prompt.get\("variaveis", []\):) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 293.99 Tm
+(        valores[nome] = variaveis.get\(nome, f"<{nome} nao informado>"\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 281.59 Tm
+(    return prompt["template"].format\(**valores\)) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 257.19 Tm
+(Quando uma variável obrigatória não é informada, o sistema insere um marcador explícito em vez de) Tj
+0 0 0 rg
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 242.49 Tm
+(enviar um prompt incompleto — assim a falha fica visível para o operador.) Tj
+0 0 0 rg
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 213.79 Tm
+(1.2 Técnicas utilizadas) Tj
+ET
+0.9 0.9 0.9 rg 56.00 185.79 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 193.79 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 190.87 193.79 Tm
+(Quando foi escolhida) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 448.62 193.79 Tm
+(Prompts) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 172.69 Tm
+(zero-shot) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 190.87 172.69 Tm
+(Tarefa geral, que o modelo já domina) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 448.62 172.69 Tm
+(2 prompts) Tj
+ET
+0.97 0.97 0.97 rg 56.00 143.59 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 151.59 Tm
+(few-shot) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 190.87 151.59 Tm
+(Convenções internas da colônia) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 448.62 151.59 Tm
+(2 prompts) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 130.49 Tm
+(structured output) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 190.87 130.49 Tm
+(Saída consumida por outro programa) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 448.62 130.49 Tm
+(1 prompt) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (2 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 4234 >>
+stream
+0.97 0.97 0.97 rg 56.00 777.89 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 785.89 Tm
+(chain-of-thought) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 190.87 785.89 Tm
+(Decisão que precisa ser auditável) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 448.62 785.89 Tm
+(1 prompt) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 775.89 m 539.28 775.89 l S 0 0 0 RG
+BT
+/F2 16 Tf
+1 0 0 1 56.00 740.79 Tm
+(2. Catálogo de prompts) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 721.79 m 539.28 721.79 l S 0 0 0 RG
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 697.79 Tm
+(2.1 Resumir um alerta operacional) Tj
+ET
+0.9 0.9 0.9 rg 56.00 669.79 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 677.79 Tm
+(Identificador) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 677.79 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 245.65 677.79 Tm
+(Objetivo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 656.69 Tm
+(resumir_alerta) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 656.69 Tm
+(zero-shot) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 656.69 Tm
+(Transformar um alerta técnico extenso em um resumo de uma frase) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 643.59 Tm
+(para o operador de plantão.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 633.59 m 539.28 633.59 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 610.49 Tm
+(Prompt montado pelo sistema:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 481.39 483.28 118.40 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 587.79 Tm
+(Você é o assistente do Núcleo Cognitivo da Aurora Siger, uma colônia marciana com 10 módulos) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 576.19 Tm
+(e prioridades de P1 \(essencial\) a P5 \(pesquisa\).) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 564.59 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 552.99 Tm
+(Tarefa: Resuma o alerta operacional abaixo em uma única frase, começando pelo módulo afetado.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 541.39 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 529.79 Tm
+(Alerta: LSS \(Sistema de Suporte de Vida, P1\) em estado DESLIGADO. Impacto em AGR, HAB e MED.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 518.19 Tm
+(759 kW comprometidos.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 506.59 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 494.99 Tm
+(Formato da resposta: Uma frase, no máximo 25 palavras, sem jargão técnico.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 471.39 Tm
+(Resposta simulada:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 423.49 483.28 37.20 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 448.69 Tm
+(LSS: falha no suporte de vida com impacto em habitação, medicina e agricultura; contingência) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 437.09 Tm
+(acionada.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 413.49 Tm
+(Por que o prompt foi escrito assim:) Tj
+0 0 0 rg
+ET
+0.955 0.955 0.955 rg 56.00 331.99 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 331.99 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 391.79 Tm
+(A tarefa é simples e bem definida, então não há necessidade de exemplos: o modelo já sabe) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 377.09 Tm
+(resumir texto a partir do pré-treinamento. O que ele não tem como adivinhar é o domínio — por) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 362.39 Tm
+(isso o contexto informa o que é a colônia e como funcionam as prioridades. O limite de 25) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 347.69 Tm
+(palavras evita que a resposta volte tão longa quanto o alerta original.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 310.99 Tm
+(2.2 Classificar uma solicitação da tripulação) Tj
+ET
+0.9 0.9 0.9 rg 56.00 282.99 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 290.99 Tm
+(Identificador) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 290.99 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 245.65 290.99 Tm
+(Objetivo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 269.89 Tm
+(classificar_solicitacao) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 269.89 Tm
+(few-shot) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 269.89 Tm
+(Direcionar pedidos da tripulação para a fila correta usando) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 256.79 Tm
+(exemplos de classificação já validados.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 246.79 m 539.28 246.79 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 223.69 Tm
+(Prompt montado pelo sistema:) Tj
+0 0 0 rg
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (3 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 5057 >>
+stream
+0.94 0.94 0.94 rg 56.00 605.89 483.28 188.00 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 781.89 Tm
+(As categorias definem a fila de atendimento da colônia. EMERGENCIA interrompe a operação) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 770.29 Tm
+(corrente; INFORMACAO não gera ordem de serviço.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 758.69 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 747.09 Tm
+(Tarefa: Classifique a solicitação da tripulação em uma das categorias: EMERGENCIA,) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 735.49 Tm
+(MANUTENCAO, SUPRIMENTO ou INFORMACAO.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 723.89 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 712.29 Tm
+(Exemplos:) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 700.69 Tm
+(Solicitação: 'O nível de oxigênio do módulo HAB caiu abaixo do limite.' -> EMERGENCIA) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 689.09 Tm
+(Solicitação: 'A luminária da bancada 3 do laboratório queimou.' -> MANUTENCAO) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 677.49 Tm
+(Solicitação: 'Precisamos de mais filtros de água para o próximo ciclo.' -> SUPRIMENTO) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 665.89 Tm
+(Solicitação: 'Qual o consumo de energia previsto para amanhã?' -> INFORMACAO) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 654.29 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 642.69 Tm
+(Solicitação: A luminária da bancada 3 do laboratório queimou.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 631.09 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 619.49 Tm
+(Formato da resposta: Apenas o nome da categoria, em letras maiúsculas, sem explicação.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 595.89 Tm
+(Resposta simulada:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 559.59 483.28 25.60 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 573.19 Tm
+(MANUTENCAO) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 549.59 Tm
+(Por que o prompt foi escrito assim:) Tj
+0 0 0 rg
+ET
+0.955 0.955 0.955 rg 56.00 453.39 483.28 85.50 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 453.39 3 85.50 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 527.89 Tm
+(Aqui o zero-shot falharia: as quatro categorias são convenções internas da colônia, e não) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 513.19 Tm
+(conceitos gerais da língua. Os quatro exemplos mostram a fronteira entre elas — em especial a) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 498.49 Tm
+(diferença entre um pedido que gera ordem de serviço \(MANUTENCAO\) e um que não gera) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 483.79 Tm
+(\(INFORMACAO\). A instrução de responder apenas com a categoria evita texto extra que) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 469.09 Tm
+(atrapalharia o roteamento automático.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 432.39 Tm
+(2.3 Gerar resposta padronizada ao centro de controle) Tj
+ET
+0.9 0.9 0.9 rg 56.00 404.39 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 412.39 Tm
+(Identificador) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 412.39 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 245.65 412.39 Tm
+(Objetivo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 391.29 Tm
+(resposta_centro_controle) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 391.29 Tm
+(zero-shot) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 391.29 Tm
+(Padronizar a comunicação entre a colônia e o centro de controle na) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 378.19 Tm
+(Terra.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 368.19 m 539.28 368.19 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 345.09 Tm
+(Prompt montado pelo sistema:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 215.99 483.28 118.40 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 322.39 Tm
+(O comunicado é transmitido com atraso de vários minutos e não pode gerar dúvida. Deve) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 310.79 Tm
+(informar o que ocorreu, o impacto e a ação já tomada.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 299.19 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 287.59 Tm
+(Tarefa: Escreva o comunicado oficial da ocorrência para o centro de controle.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 275.99 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 264.39 Tm
+(Dados da ocorrência: LSS \(Sistema de Suporte de Vida, P1\) em estado DESLIGADO. Impacto em) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 252.79 Tm
+(AGR, HAB e MED. 759 kW comprometidos.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 241.19 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 229.59 Tm
+(Formato da resposta: Três linhas rotuladas: OCORRENCIA, IMPACTO e ACAO. Uma frase por linha.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 205.99 Tm
+(Resposta simulada:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 146.49 483.28 48.80 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 183.29 Tm
+(OCORRENCIA: Falha no módulo LSS \(Sistema de Suporte de Vida\), prioridade P1.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 171.69 Tm
+(IMPACTO: Módulos AGR, HAB e MED dependem do LSS; 759 kW comprometidos.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 160.09 Tm
+(ACAO: Protocolo de contingência acionado; revisão humana pendente.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 136.49 Tm
+(Por que o prompt foi escrito assim:) Tj
+0 0 0 rg
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (4 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 4643 >>
+stream
+0.955 0.955 0.955 rg 56.00 723.09 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 723.09 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 782.89 Tm
+(O formato importa mais que o conteúdo: a comunicação com a Terra tem atraso de vários) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 768.19 Tm
+(minutos, então o comunicado precisa responder de antemão as três perguntas óbvias. Os rótulos) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 753.49 Tm
+(fixos OCORRENCIA, IMPACTO e ACAO garantem que nenhuma delas seja esquecida, sem) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 738.79 Tm
+(precisar de exemplos.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 702.09 Tm
+(2.4 Transformar registro técnico em linguagem simples) Tj
+ET
+0.9 0.9 0.9 rg 56.00 674.09 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 682.09 Tm
+(Identificador) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 682.09 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 245.65 682.09 Tm
+(Objetivo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 660.99 Tm
+(simplificar_registro) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 660.99 Tm
+(few-shot) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 660.99 Tm
+(Permitir que tripulantes sem formação técnica entendam o que) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 647.89 Tm
+(aconteceu.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 637.89 m 539.28 637.89 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 614.79 Tm
+(Prompt montado pelo sistema:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 404.49 483.28 199.60 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 592.09 Tm
+(O leitor conhece a colônia, mas não conhece os códigos dos módulos nem as unidades de) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 580.49 Tm
+(engenharia.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 568.89 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 557.29 Tm
+(Tarefa: Reescreva o registro técnico em linguagem simples, como se explicasse a um colega de) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 545.69 Tm
+(outra área.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 534.09 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 522.49 Tm
+(Exemplos:) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 510.89 Tm
+(Registro: 'COM DEGRADADO, enlace redundante ativo.' -> 'A comunicação está instável, mas o) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 499.29 Tm
+(canal reserva assumiu.') Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 487.69 Tm
+(Registro: 'PWR SHUTDOWN, 1030 kW indisponíveis.' -> 'A usina parou e a colônia está sem) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 476.09 Tm
+(energia própria.') Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 464.49 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 452.89 Tm
+(Registro: LSS SHUTDOWN, 759 kW comprometidos.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 441.29 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 429.69 Tm
+(Formato da resposta: Uma frase em linguagem cotidiana, sem siglas e sem números de) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 418.09 Tm
+(engenharia.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 394.49 Tm
+(Resposta simulada:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 358.19 483.28 25.60 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 371.79 Tm
+(O sistema que mantém o ar e a água parou de funcionar e já acionamos o plano de emergência.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 348.19 Tm
+(Por que o prompt foi escrito assim:) Tj
+0 0 0 rg
+ET
+0.955 0.955 0.955 rg 56.00 281.39 483.28 56.10 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 281.39 3 56.10 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 326.49 Tm
+(A dificuldade não é entender o registro, e sim calibrar o nível de linguagem. Os dois exemplos) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 311.79 Tm
+(definem esse nível melhor do que qualquer descrição: mostram que siglas viram nomes) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 297.09 Tm
+(completos e que valores de engenharia são substituídos por consequências práticas.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 260.39 Tm
+(2.5 Gerar saída estruturada em JSON) Tj
+ET
+0.9 0.9 0.9 rg 56.00 232.39 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 240.39 Tm
+(Identificador) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 240.39 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 245.65 240.39 Tm
+(Objetivo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 219.29 Tm
+(diagnostico_estruturado) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 219.29 Tm
+(structured output) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 219.29 Tm
+(Produzir uma resposta que o próprio NCAS consiga gravar em) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 206.19 Tm
+(dados_colonia.json sem tratamento manual.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 196.19 m 539.28 196.19 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 173.09 Tm
+(Prompt montado pelo sistema:) Tj
+0 0 0 rg
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (5 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 5076 >>
+stream
+0.94 0.94 0.94 rg 56.00 663.89 483.28 130.00 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 781.89 Tm
+(A saída será lida por outro programa. Qualquer texto fora do objeto JSON quebra a integração.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 770.29 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 758.69 Tm
+(Tarefa: Analise a ocorrência e retorne o diagnóstico no formato JSON especificado.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 747.09 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 735.49 Tm
+(Ocorrência: LSS \(Sistema de Suporte de Vida, P1\) em estado DESLIGADO. Impacto em AGR, HAB e) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 723.89 Tm
+(MED. 759 kW comprometidos.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 712.29 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 700.69 Tm
+(Formato da resposta: Retorne APENAS um objeto JSON válido com os campos: classificacao) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 689.09 Tm
+(\(string: CRITICO, ATENCAO ou NORMAL\), confianca \(número entre 0 e 1\), acao_recomendada) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 677.49 Tm
+(\(string\) e origem \(string\).) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 653.89 Tm
+(Resposta simulada:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 559.59 483.28 83.60 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 631.19 Tm
+({) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 619.59 Tm
+(    "classificacao": "ATENCAO",) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 607.99 Tm
+(    "confianca": 0.92,) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 596.39 Tm
+(    "acao_recomendada": "Verificar o módulo de comunicação",) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 584.79 Tm
+(    "origem": "simulacao_NCAS") Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 573.19 Tm
+(}) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 549.59 Tm
+(Por que o prompt foi escrito assim:) Tj
+0 0 0 rg
+ET
+0.955 0.955 0.955 rg 56.00 468.09 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 468.09 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 527.89 Tm
+(A saída alimenta outro programa, então o prompt estabelece um contrato de dados: nomes dos) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 513.19 Tm
+(campos, tipos esperados e valores permitidos em classificacao. A instrução de retornar APENAS) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 498.49 Tm
+(o objeto JSON é essencial — sem ela o modelo tende a acrescentar uma frase introdutória que) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 483.79 Tm
+(quebra o json.loads\(\) do lado que consome a resposta.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 447.09 Tm
+(2.6 Decidir a ordem de atendimento passo a passo) Tj
+ET
+0.9 0.9 0.9 rg 56.00 419.09 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 427.09 Tm
+(Identificador) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 158.66 427.09 Tm
+(Técnica) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 245.65 427.09 Tm
+(Objetivo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 405.99 Tm
+(cadeia_raciocinio) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 158.66 405.99 Tm
+(chain-of-thought) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 405.99 Tm
+(Tornar auditável a decisão de qual ocorrência atender primeiro,) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 245.65 392.89 Tm
+(expondo o raciocínio intermediário.) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 382.89 m 539.28 382.89 l S 0 0 0 RG
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 359.79 Tm
+(Prompt montado pelo sistema:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 219.09 483.28 130.00 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 337.09 Tm
+(Há uma única equipe de manutenção disponível. A prioridade do módulo \(P1 a P5\) e o número de) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 325.49 Tm
+(módulos dependentes definem a gravidade.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 313.89 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 302.29 Tm
+(Tarefa: Decida qual ocorrência deve ser atendida primeiro. Pense passo a passo antes de) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 290.69 Tm
+(concluir.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 279.09 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 267.49 Tm
+(Ocorrências: A: falha no LSS \(P1\). B: falha no LOG \(P4\).) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 255.89 Tm
+() Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 244.29 Tm
+(Formato da resposta: Liste os passos numerados do raciocínio e termine com uma linha iniciada) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 232.69 Tm
+(por 'CONCLUSAO:'.) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 209.09 Tm
+(Resposta simulada:) Tj
+0 0 0 rg
+ET
+0.94 0.94 0.94 rg 56.00 126.39 483.28 72.00 re f 0 0 0 rg
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 186.39 Tm
+(1. A ocorrência A atinge o módulo LSS, de prioridade P1.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 174.79 Tm
+(2. A ocorrência B atinge o módulo LOG, de prioridade P4.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 163.19 Tm
+(3. O LSS possui três módulos dependentes; o LOG não possui nenhum.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 151.59 Tm
+(4. A regra EMERGENCIA = FALHA . CRITICO é verdadeira apenas para a ocorrência A.) Tj
+ET
+BT
+/F3 8.2 Tf
+1 0 0 1 66.00 139.99 Tm
+(CONCLUSAO: atender primeiro a ocorrência A \(LSS\).) Tj
+ET
+BT
+0.30 0.30 0.30 rg
+/F1 10.5 Tf
+1 0 0 1 56.00 116.39 Tm
+(Por que o prompt foi escrito assim:) Tj
+0 0 0 rg
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (6 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 20 0 R >>
+endobj
+20 0 obj
+<< /Length 5033 >>
+stream
+0.955 0.955 0.955 rg 56.00 723.09 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 723.09 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 782.89 Tm
+(Priorizar entre ocorrências exige comparar prioridade e número de dependentes antes de) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 768.19 Tm
+(concluir. Pedir a resposta direta costuma produzir uma escolha plausível mas sem justificativa) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 753.49 Tm
+(auditável. Ao exigir os passos numerados, o operador consegue verificar cada etapa e discordar) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 738.79 Tm
+(de um passo específico, e não apenas do resultado final.) Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 56.00 700.09 Tm
+(3. Análise de melhoria da resposta) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 681.09 m 539.28 681.09 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 667.09 Tm
+(Um prompt raramente nasce pronto. Esta seção registra a iteração feita sobre o prompt de saída) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 652.39 Tm
+(estruturada, que era o mais frágil do conjunto: sua resposta precisa ser lida por json.loads\(\) e qualquer) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 637.69 Tm
+(texto extra quebra a integração.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 608.99 Tm
+(3.1 Primeira versão) Tj
+ET
+0.94 0.94 0.94 rg 56.00 558.99 483.28 38.00 re f 0 0 0 rg
+BT
+/F3 8.6 Tf
+1 0 0 1 66.00 584.99 Tm
+(Analise a ocorrência e responda em JSON com a classificação,) Tj
+ET
+BT
+/F3 8.6 Tf
+1 0 0 1 66.00 572.99 Tm
+(a confiança e a ação recomendada.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 548.99 Tm
+(Problemas observados na resposta simulada com essa formulação:) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 59.00 530.29 Tm
+(•) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 530.29 Tm
+(O modelo antecedia o JSON com uma frase de apresentação.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 59.00 513.59 Tm
+(•) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 513.59 Tm
+(Os nomes dos campos variavam entre execuções \(classificacao / classe\).) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 59.00 496.89 Tm
+(•) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 496.89 Tm
+(O campo de confiança ora vinha como número, ora como texto \("alta"\).) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 59.00 480.19 Tm
+(•) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 480.19 Tm
+(Não havia lista fechada de valores para a classificação.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 453.49 Tm
+(3.2 Versão adotada) Tj
+ET
+0.94 0.94 0.94 rg 56.00 391.49 483.28 50.00 re f 0 0 0 rg
+BT
+/F3 8.6 Tf
+1 0 0 1 66.00 429.49 Tm
+(Retorne APENAS um objeto JSON válido com os campos: classificacao \(string: CRITICO,) Tj
+ET
+BT
+/F3 8.6 Tf
+1 0 0 1 66.00 417.49 Tm
+(ATENCAO ou NORMAL\), confianca \(número entre 0 e 1\), acao_recomendada \(string\) e origem) Tj
+ET
+BT
+/F3 8.6 Tf
+1 0 0 1 66.00 405.49 Tm
+(\(string\).) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 381.49 Tm
+(Mudanças aplicadas e o efeito de cada uma:) Tj
+ET
+0.9 0.9 0.9 rg 56.00 354.79 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 362.79 Tm
+(Mudança) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 255.31 362.79 Tm
+(Problema que resolve) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 341.69 Tm
+(Nomear cada campo do objeto) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 255.31 341.69 Tm
+(Elimina a variação de nomenclatura) Tj
+ET
+0.97 0.97 0.97 rg 56.00 312.59 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 320.59 Tm
+(Declarar o tipo de cada campo) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 255.31 320.59 Tm
+(Garante número em confianca) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 299.49 Tm
+(Enumerar os valores permitidos) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 255.31 299.49 Tm
+(Fecha o domínio de classificacao) Tj
+ET
+0.97 0.97 0.97 rg 56.00 270.39 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 278.39 Tm
+(Exigir APENAS o objeto JSON) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 255.31 278.39 Tm
+(Remove o texto de apresentação) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 257.29 Tm
+(Explicar que outro programa lê) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 255.31 257.29 Tm
+(Justifica a rigidez do formato) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 247.29 m 539.28 247.29 l S 0 0 0 RG
+0.955 0.955 0.955 rg 56.00 161.39 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 161.39 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 221.19 Tm
+(Resultado: a resposta simulada passou a ser consumida diretamente por json.loads\(\), sem) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 206.49 Tm
+(tratamento manual. O teste test_saida_estruturada_declara_contrato_json verifica exatamente) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 191.79 Tm
+(isso — ele faz o parse da resposta e compara o campo confianca, falhando se o contrato for) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 177.09 Tm
+(quebrado.) Tj
+ET
+BT
+/F2 12.5 Tf
+1 0 0 1 56.00 140.39 Tm
+(3.3 Princípio geral extraído da iteração) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 120.39 Tm
+(As quatro correções têm a mesma natureza: substituir uma expectativa implícita por uma instrução) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 105.69 Tm
+(explícita. Sempre que a primeira versão de um prompt produziu resultado inconsistente, a causa foi) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (7 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 22 0 R >>
+endobj
+22 0 obj
+<< /Length 4164 >>
+stream
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 785.89 Tm
+(uma decisão que ficou a cargo do modelo quando deveria estar no prompt.) Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 56.00 755.19 Tm
+(4. Uso dos prompts no sistema) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 736.19 m 539.28 736.19 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 722.19 Tm
+(O catálogo é carregado na inicialização do NCAS e fica disponível em duas situações distintas.) Tj
+ET
+0.9 0.9 0.9 rg 56.00 695.49 483.28 21.10 re f 0 0 0 rg
+BT
+/F2 9.5 Tf
+1 0 0 1 62.00 703.49 Tm
+(Onde) Tj
+ET
+BT
+/F2 9.5 Tf
+1 0 0 1 246.11 703.49 Tm
+(Comportamento) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 682.39 Tm
+(Menu 6 — Exibir prompts estruturados) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 246.11 682.39 Tm
+(Mostra o prompt montado e a resposta simulada de cada técnica) Tj
+ET
+0.97 0.97 0.97 rg 56.00 653.29 483.28 21.10 re f 0 0 0 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 62.00 661.29 Tm
+(Menu 7 — Diagnosticar infraestrutura) Tj
+ET
+BT
+/F1 9.5 Tf
+1 0 0 1 246.11 661.29 Tm
+(Monta a recomendação com dados reais do módulo analisado) Tj
+ET
+0.85 0.85 0.85 RG 0.6 w 56.00 651.29 m 539.28 651.29 l S 0 0 0 RG
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 628.19 Tm
+(No diagnóstico, o prompt não é montado com texto fixo: ele recebe o módulo afetado, sua prioridade, o) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 613.49 Tm
+(impacto calculado sobre as dependências, o protocolo recuperado da base local e o índice de risco) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 598.79 Tm
+(estimado pelo modelo otimizado. É esse conjunto que caracteriza a etapa de recuperação de contexto) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 584.09 Tm
+(antes da geração da resposta.) Tj
+ET
+0.94 0.94 0.94 rg 56.00 410.59 483.28 162.80 re f 0 0 0 rg
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 561.39 Tm
+(# ncas_core/aplicacao.py \(trecho do diagnóstico\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 548.99 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 536.59 Tm
+(documentos = self.base_conhecimento.buscar\(consulta\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 524.19 Tm
+(contexto = self.base_conhecimento.formatar_contexto\(documentos\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 511.79 Tm
+(resiliencia = avaliar_resiliencia\(self.rede, modulo_id\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 499.39 Tm
+(risco = otimizacao.prever_risco\(self.modelo_risco, ...\)) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 486.99 Tm
+() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 474.59 Tm
+(recomendacao = SimuladorIA.recomendacao_diagnostico\() Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 462.19 Tm
+(    modulo.module_id, modulo.name, modulo.priority,) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 449.79 Tm
+(    str\(modulo.status\), impacto, contexto,) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 437.39 Tm
+(    str\(resiliencia["nivel"]\), texto_risco,) Tj
+ET
+BT
+/F3 9.0 Tf
+1 0 0 1 66.00 424.99 Tm
+(\)) Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 56.00 388.59 Tm
+(5. Limites e responsabilidade) Tj
+ET
+0.75 0.75 0.75 RG 0.6 w 56.00 369.59 m 539.28 369.59 l S 0 0 0 RG
+0.955 0.955 0.955 rg 56.00 292.79 483.28 70.80 re f 0 0 0 rg
+0.25 0.25 0.25 rg 56.00 292.79 3 70.80 re f 0 0 0 rg
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 352.59 Tm
+(Todas as respostas apresentadas neste documento são simuladas. Elas demonstram a estrutura) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 337.89 Tm
+(dos prompts e o fluxo de decisão do sistema, não a inferência de um modelo de linguagem real.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 323.19 Tm
+(Nenhuma recomendação do NCAS deve ser aplicada sem revisão humana: todo diagnóstico é) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 72.00 308.49 Tm
+(gravado com o campo revisao_humana em PENDENTE até que um operador o aprove ou rejeite.) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 281.79 Tm
+(Essa decisão de projeto responde a um risco concreto da IA generativa: uma resposta bem formatada) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 267.09 Tm
+(e confiante pode estar errada. Manter a origem da resposta identificada, os dados do diagnóstico) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 252.39 Tm
+(visíveis e a aprovação humana obrigatória reduz a chance de uma saída automática ser tratada como) Tj
+ET
+BT
+/F1 10.5 Tf
+1 0 0 1 56.00 237.69 Tm
+(decisão final.) Tj
+ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 522.74 38.00 Tm (8 / 8) Tj 0 0 0 rg ET
+BT 0.55 0.55 0.55 rg /F1 8.5 Tf 1 0 0 1 56.00 38.00 Tm (NCAS · Prompts utilizados) Tj 0 0 0 rg ET
+endstream
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000169 00000 n 
+0000000266 00000 n 
+0000000368 00000 n 
+0000000463 00000 n 
+0000000568 00000 n 
+0000000730 00000 n 
+0000002106 00000 n 
+0000002269 00000 n 
+0000007680 00000 n 
+0000007844 00000 n 
+0000012131 00000 n 
+0000012295 00000 n 
+0000017405 00000 n 
+0000017569 00000 n 
+0000022265 00000 n 
+0000022429 00000 n 
+0000027558 00000 n 
+0000027722 00000 n 
+0000032808 00000 n 
+0000032972 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+37189
+%%EOF

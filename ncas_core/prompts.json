@@ -1,0 +1,93 @@
+{
+    "versao": "1.0",
+    "sistema": "Núcleo Cognitivo da Aurora Siger (NCAS)",
+    "observacao": "Os prompts seguem os quatro elementos de projeto do Capítulo 5: tarefa, contexto, exemplos e formato de saída. As respostas são simuladas localmente, sem chamada a API externa.",
+    "prompts": [
+        {
+            "id": "resumir_alerta",
+            "titulo": "Resumir um alerta operacional",
+            "tecnica": "zero-shot",
+            "objetivo": "Transformar um alerta técnico extenso em um resumo de uma frase para o operador de plantão.",
+            "tarefa": "Resuma o alerta operacional abaixo em uma única frase, começando pelo módulo afetado.",
+            "contexto": "Você é o assistente do Núcleo Cognitivo da Aurora Siger, uma colônia marciana com 10 módulos e prioridades de P1 (essencial) a P5 (pesquisa).",
+            "exemplos": [],
+            "formato_saida": "Uma frase, no máximo 25 palavras, sem jargão técnico.",
+            "template": "{contexto}\n\nTarefa: {tarefa}\n\nAlerta: {alerta}\n\nFormato da resposta: {formato_saida}",
+            "variaveis": ["alerta"],
+            "resposta_simulada": "LSS: falha no suporte de vida com impacto em habitação, medicina e agricultura; contingência acionada."
+        },
+        {
+            "id": "classificar_solicitacao",
+            "titulo": "Classificar uma solicitação da tripulação",
+            "tecnica": "few-shot",
+            "objetivo": "Direcionar pedidos da tripulação para a fila correta usando exemplos de classificação já validados.",
+            "tarefa": "Classifique a solicitação da tripulação em uma das categorias: EMERGENCIA, MANUTENCAO, SUPRIMENTO ou INFORMACAO.",
+            "contexto": "As categorias definem a fila de atendimento da colônia. EMERGENCIA interrompe a operação corrente; INFORMACAO não gera ordem de serviço.",
+            "exemplos": [
+                "Solicitação: 'O nível de oxigênio do módulo HAB caiu abaixo do limite.' -> EMERGENCIA",
+                "Solicitação: 'A luminária da bancada 3 do laboratório queimou.' -> MANUTENCAO",
+                "Solicitação: 'Precisamos de mais filtros de água para o próximo ciclo.' -> SUPRIMENTO",
+                "Solicitação: 'Qual o consumo de energia previsto para amanhã?' -> INFORMACAO"
+            ],
+            "formato_saida": "Apenas o nome da categoria, em letras maiúsculas, sem explicação.",
+            "template": "{contexto}\n\nTarefa: {tarefa}\n\nExemplos:\n{exemplos}\n\nSolicitação: {solicitacao}\n\nFormato da resposta: {formato_saida}",
+            "variaveis": ["solicitacao"],
+            "resposta_simulada": "MANUTENCAO"
+        },
+        {
+            "id": "resposta_centro_controle",
+            "titulo": "Gerar resposta padronizada ao centro de controle",
+            "tecnica": "zero-shot",
+            "objetivo": "Padronizar a comunicação entre a colônia e o centro de controle na Terra.",
+            "tarefa": "Escreva o comunicado oficial da ocorrência para o centro de controle.",
+            "contexto": "O comunicado é transmitido com atraso de vários minutos e não pode gerar dúvida. Deve informar o que ocorreu, o impacto e a ação já tomada.",
+            "exemplos": [],
+            "formato_saida": "Três linhas rotuladas: OCORRENCIA, IMPACTO e ACAO. Uma frase por linha.",
+            "template": "{contexto}\n\nTarefa: {tarefa}\n\nDados da ocorrência: {ocorrencia}\n\nFormato da resposta: {formato_saida}",
+            "variaveis": ["ocorrencia"],
+            "resposta_simulada": "OCORRENCIA: Falha no módulo LSS (Sistema de Suporte de Vida), prioridade P1.\nIMPACTO: Módulos AGR, HAB e MED dependem do LSS; 759 kW comprometidos.\nACAO: Protocolo de contingência acionado; revisão humana pendente."
+        },
+        {
+            "id": "simplificar_registro",
+            "titulo": "Transformar registro técnico em linguagem simples",
+            "tecnica": "few-shot",
+            "objetivo": "Permitir que tripulantes sem formação técnica entendam o que aconteceu.",
+            "tarefa": "Reescreva o registro técnico em linguagem simples, como se explicasse a um colega de outra área.",
+            "contexto": "O leitor conhece a colônia, mas não conhece os códigos dos módulos nem as unidades de engenharia.",
+            "exemplos": [
+                "Registro: 'COM DEGRADADO, enlace redundante ativo.' -> 'A comunicação está instável, mas o canal reserva assumiu.'",
+                "Registro: 'PWR SHUTDOWN, 1030 kW indisponíveis.' -> 'A usina parou e a colônia está sem energia própria.'"
+            ],
+            "formato_saida": "Uma frase em linguagem cotidiana, sem siglas e sem números de engenharia.",
+            "template": "{contexto}\n\nTarefa: {tarefa}\n\nExemplos:\n{exemplos}\n\nRegistro: {registro}\n\nFormato da resposta: {formato_saida}",
+            "variaveis": ["registro"],
+            "resposta_simulada": "O sistema que mantém o ar e a água parou de funcionar e já acionamos o plano de emergência."
+        },
+        {
+            "id": "diagnostico_estruturado",
+            "titulo": "Gerar saída estruturada em JSON",
+            "tecnica": "structured output",
+            "objetivo": "Produzir uma resposta que o próprio NCAS consiga gravar em dados_colonia.json sem tratamento manual.",
+            "tarefa": "Analise a ocorrência e retorne o diagnóstico no formato JSON especificado.",
+            "contexto": "A saída será lida por outro programa. Qualquer texto fora do objeto JSON quebra a integração.",
+            "exemplos": [],
+            "formato_saida": "Retorne APENAS um objeto JSON válido com os campos: classificacao (string: CRITICO, ATENCAO ou NORMAL), confianca (número entre 0 e 1), acao_recomendada (string) e origem (string).",
+            "template": "{contexto}\n\nTarefa: {tarefa}\n\nOcorrência: {ocorrencia}\n\nFormato da resposta: {formato_saida}",
+            "variaveis": ["ocorrencia"],
+            "resposta_simulada": "{\n    \"classificacao\": \"ATENCAO\",\n    \"confianca\": 0.92,\n    \"acao_recomendada\": \"Verificar o módulo de comunicação\",\n    \"origem\": \"simulacao_NCAS\"\n}"
+        },
+        {
+            "id": "cadeia_raciocinio",
+            "titulo": "Decidir a ordem de atendimento passo a passo",
+            "tecnica": "chain-of-thought",
+            "objetivo": "Tornar auditável a decisão de qual ocorrência atender primeiro, expondo o raciocínio intermediário.",
+            "tarefa": "Decida qual ocorrência deve ser atendida primeiro. Pense passo a passo antes de concluir.",
+            "contexto": "Há uma única equipe de manutenção disponível. A prioridade do módulo (P1 a P5) e o número de módulos dependentes definem a gravidade.",
+            "exemplos": [],
+            "formato_saida": "Liste os passos numerados do raciocínio e termine com uma linha iniciada por 'CONCLUSAO:'.",
+            "template": "{contexto}\n\nTarefa: {tarefa}\n\nOcorrências: {ocorrencias}\n\nFormato da resposta: {formato_saida}",
+            "variaveis": ["ocorrencias"],
+            "resposta_simulada": "1. A ocorrência A atinge o módulo LSS, de prioridade P1.\n2. A ocorrência B atinge o módulo LOG, de prioridade P4.\n3. O LSS possui três módulos dependentes; o LOG não possui nenhum.\n4. A regra EMERGENCIA = FALHA . CRITICO é verdadeira apenas para a ocorrência A.\nCONCLUSAO: atender primeiro a ocorrência A (LSS)."
+        }
+    ]
+}
