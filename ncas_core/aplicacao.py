@@ -40,9 +40,6 @@ class AplicacaoNCAS:
             for aviso in self.repositorio.avisos_leitura:
                 print(f"- {aviso}")
 
-    # ------------------------------------------------------------------
-    # Entrada de dados
-    # ------------------------------------------------------------------
     @staticmethod
     def ler_booleano(pergunta: str) -> bool:
         """Converte as respostas comuns do usuario para booleano."""
@@ -54,9 +51,6 @@ class AplicacaoNCAS:
                 return False
             print("Resposta inválida. Digite s para sim ou n para não.")
 
-    # ------------------------------------------------------------------
-    # 1 a 3 - Registros e arquivos
-    # ------------------------------------------------------------------
     def cadastrar_registro(self) -> None:
         """Coleta um evento informado pelo operador e o persiste."""
         print("\n--- Cadastro de registro ---")
@@ -91,7 +85,6 @@ class AplicacaoNCAS:
         print(f"  {self.repositorio.primeira_linha_txt() or '(arquivo vazio)'}")
 
     def carregar_dados_json(self) -> None:
-        """Carrega e exibe o documento JSON estruturado."""
         print("\n--- Carregamento do JSON ---")
         try:
             documento = self.repositorio.carregar_json()
@@ -103,9 +96,6 @@ class AplicacaoNCAS:
             return
         print(json.dumps(documento, ensure_ascii=False, indent=4))
 
-    # ------------------------------------------------------------------
-    # 4 e 5 - Regras logicas
-    # ------------------------------------------------------------------
     def aplicar_regra_alerta(self) -> None:
         """Regra 1: avalia o alerta e demonstra a simplificacao algebrica."""
         print("\n--- Regra 1: alerta operacional ---")
@@ -143,9 +133,6 @@ class AplicacaoNCAS:
             )
         print("\nAs duas colunas são idênticas: De Morgan preserva o resultado.")
 
-    # ------------------------------------------------------------------
-    # 6 - Prompts estruturados
-    # ------------------------------------------------------------------
     def exibir_prompts(self) -> None:
         """Exibe o catalogo de prompts estruturados e a resposta simulada."""
         print("\n--- Prompts estruturados (prompts.json) ---")
@@ -183,9 +170,6 @@ class AplicacaoNCAS:
             print(self.catalogo.descrever(id_prompt, **variaveis))
             print("-" * 60)
 
-    # ------------------------------------------------------------------
-    # 7 - Diagnostico
-    # ------------------------------------------------------------------
     def diagnosticar_infraestrutura(self) -> None:
         """Analisa um modulo, aplica as regras e registra o diagnostico."""
         print("\n--- Diagnóstico da infraestrutura ---")
@@ -260,9 +244,6 @@ class AplicacaoNCAS:
         self.repositorio.salvar_json(self.rede)
         print(f"\nDiagnóstico registrado como #{registro.id_registro}.")
 
-    # ------------------------------------------------------------------
-    # 8 e 9 - Conhecimento e otimizacao
-    # ------------------------------------------------------------------
     def consultar_base_conhecimento(self) -> None:
         """Demonstra a etapa de recuperacao de contexto do fluxo RAG local."""
         print("\n--- Base de conhecimento local (RAG) ---")
@@ -292,9 +273,6 @@ class AplicacaoNCAS:
                 f"risco={risco:.2f} ({otimizacao.classificar_risco(risco)})"
             )
 
-    # ------------------------------------------------------------------
-    # 10 a 13 - Operacao
-    # ------------------------------------------------------------------
     def exibir_painel(self) -> None:
         """Exibe uma visao consolidada da operacao da colonia."""
         resumo = resumo_rede(self.rede)
@@ -384,9 +362,6 @@ class AplicacaoNCAS:
         self.repositorio.salvar_json(self.rede)
         print(f"Registro #{id_registro} atualizado para {status}.")
 
-    # ------------------------------------------------------------------
-    # Menu principal
-    # ------------------------------------------------------------------
     MENU = (
         "\n=== NCAS | Núcleo Cognitivo da Aurora Siger ===\n"
         "-- Registros e arquivos --\n"
@@ -443,7 +418,6 @@ class AplicacaoNCAS:
             try:
                 acao()
             except (EOFError, KeyboardInterrupt):
-                # Encerra com seguranca se a entrada acabar no meio de um fluxo.
                 print("\nEncerrando o NCAS.")
                 return
             except (OSError, ValueError) as erro:

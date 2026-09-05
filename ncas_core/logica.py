@@ -17,9 +17,6 @@ from __future__ import annotations
 class MotorLogico:
     """Aplica, explica e demonstra as regras de decisao da colonia."""
 
-    # ------------------------------------------------------------------
-    # Regra 1 - ALERTA (teoremas de simplificacao)
-    # ------------------------------------------------------------------
     @staticmethod
     def calcular_alerta(falha: bool, critico: bool) -> bool:
         """Calcula ALERTA = (FALHA . CRITICO) + (FALHA . CRITICO').
@@ -92,9 +89,6 @@ class MotorLogico:
             "regra EMERGENCIA = FALHA . CRITICO, que aciona a contingência."
         )
 
-    # ------------------------------------------------------------------
-    # Regra 2 - BLOQUEIO (teorema de De Morgan)
-    # ------------------------------------------------------------------
     @staticmethod
     def calcular_acesso(autorizado: bool, modulo_ativo: bool) -> bool:
         """Libera a consulta apenas se ACESSO = AUTORIZADO . ATIVO."""

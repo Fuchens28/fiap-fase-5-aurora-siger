@@ -23,9 +23,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from math import isfinite
 
-# Historico didatico de ocorrencias ja avaliadas por operadores humanos.
-# Cada tupla e (prioridade, modulos_impactados, consumo_kw, risco_observado).
-# O risco observado e a nota de 0 a 1 que a equipe atribuiu ao incidente.
+# (prioridade, modulos_impactados, consumo_kw, risco_observado)
+# O risco observado e a nota de 0 a 1 atribuida por operadores humanos.
 HISTORICO_OCORRENCIAS: list[tuple[int, int, float, float]] = [
     (1, 4, 759.0, 0.98),
     (1, 9, 1030.0, 1.00),
@@ -39,7 +38,6 @@ HISTORICO_OCORRENCIAS: list[tuple[int, int, float, float]] = [
     (5, 1, 41.0, 0.15),
 ]
 
-# Limites usados na normalizacao das variaveis de entrada.
 PRIORIDADE_MAXIMA = 5
 MODULOS_MAXIMO = 10
 CONSUMO_MAXIMO_KW = 1030.0
@@ -116,21 +114,13 @@ def treinar(
     epocas: int = 4000,
     regularizacao: float = 0.01,
 ) -> ResultadoTreino:
-    """Ajusta os pesos do modelo por gradiente descendente.
+    """Ajusta os pesos por gradiente descendente: w := w - taxa . gradiente.
 
-    A cada epoca os pesos caminham na direcao oposta ao gradiente da funcao
-    de custo, seguindo a regra de atualizacao do Capitulo 7:
+    A regularizacao L2 penaliza pesos de magnitude elevada, evitando que uma
+    unica variavel domine a decisao.
 
-        w := w - taxa . gradiente
-
-    O termo de regularizacao L2 penaliza pesos de magnitude elevada, o que
-    reduz a sensibilidade do modelo a variacoes do historico e evita que uma
-    unica variavel domine a decisao (overfitting).
-
-    A taxa de aprendizado precisa respeitar a condicao de estabilidade
-    ``taxa . (2 . lambda) < 2``. Se ela for grande demais, o passo ultrapassa
-    o ponto de minimo e o erro cresce a cada epoca em vez de diminuir. Por
-    isso o laco interrompe o treino caso os pesos deixem de ser finitos.
+    A taxa precisa respeitar a condicao de estabilidade ``taxa . 2 . lambda < 2``;
+    acima disso o passo ultrapassa o minimo e o erro cresce a cada epoca.
     """
     amostras = preparar_amostras(historico)
     if not amostras:
@@ -153,8 +143,7 @@ def treinar(
         for indice in range(quantidade_pesos):
             pesos[indice] -= taxa_aprendizado * gradientes[indice]
         if not all(isfinite(peso) for peso in pesos):
-            # Divergencia: a taxa de aprendizado e alta demais para este
-            # lambda. Interrompe e devolve o ultimo estado estavel.
+            # Taxa de aprendizado alta demais para este lambda.
             pesos = list(pesos_anteriores)
             break
         pesos_anteriores = list(pesos)

@@ -31,10 +31,8 @@ from typing import Any
 from .infraestrutura import resumo_rede
 from .modelos import RedeInfraestrutura, RegistroColonia
 
-# Separador de campos do arquivo texto.
 SEPARADOR = "|"
 
-# Situacoes aceitas no campo de revisao humana.
 REVISOES_VALIDAS = {"PENDENTE", "APROVADA", "REJEITADA"}
 
 
@@ -52,9 +50,6 @@ class RepositorioColonia:
         self.avisos_leitura: list[str] = []
         self.carregar()
 
-    # ------------------------------------------------------------------
-    # Carga inicial
-    # ------------------------------------------------------------------
     def carregar(self) -> None:
         """Carrega o estado do sistema priorizando o JSON estruturado.
 
@@ -75,11 +70,7 @@ class RepositorioColonia:
             self.registros = []
         self.carregar_txt()
 
-    # ------------------------------------------------------------------
-    # Operacoes de escrita
-    # ------------------------------------------------------------------
     def proximo_id(self) -> int:
-        """Retorna o proximo identificador disponivel."""
         return max((registro.id_registro for registro in self.registros), default=0) + 1
 
     def adicionar(self, registro: RegistroColonia) -> None:
@@ -108,9 +99,6 @@ class RepositorioColonia:
                 return True
         return False
 
-    # ------------------------------------------------------------------
-    # Arquivo texto
-    # ------------------------------------------------------------------
     @staticmethod
     def _formatar_linha(registro: RegistroColonia) -> str:
         """Monta a linha do arquivo texto a partir de um registro.
@@ -205,9 +193,6 @@ class RepositorioColonia:
         with open(self.arquivo_txt, "w", encoding="utf-8") as arquivo:
             arquivo.writelines(linhas)
 
-    # ------------------------------------------------------------------
-    # Arquivo JSON
-    # ------------------------------------------------------------------
     def salvar_json(self, rede: RedeInfraestrutura | None = None) -> None:
         """Salva o documento JSON usando substituicao atomica.
 

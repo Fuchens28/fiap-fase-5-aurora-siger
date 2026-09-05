@@ -42,7 +42,6 @@ class CatalogoPrompts:
         ]
 
     def obter(self, id_prompt: str) -> dict[str, Any] | None:
-        """Busca um prompt pelo identificador."""
         for prompt in self.prompts:
             if prompt["id"] == id_prompt:
                 return prompt

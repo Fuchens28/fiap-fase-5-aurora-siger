@@ -11,7 +11,6 @@ from ncas_core.aplicacao import AplicacaoNCAS
 
 
 def main() -> None:
-    """Inicia o menu interativo do NCAS."""
     AplicacaoNCAS().executar()
 
 
